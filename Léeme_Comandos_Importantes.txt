@@ -23,6 +23,9 @@ python manage.py runserver
 cd ..
 cd frontend
 npm install
+npm install vue-router
+npm install axios
+
 
 5. Con el venv activo comprueba la ejecución del servidor del Frontend
 
