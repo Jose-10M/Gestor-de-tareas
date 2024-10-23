@@ -9,23 +9,24 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-    name: 'PasswordResetComponent',
 data() {
-    return {
+return {
     email: ''
-    }
+};
 },
 methods: {
-    resetPassword() {
-    this.$http.post('/api/password-reset/', {
-        email: this.email
-    }).then(() => {
-        alert("Correo de recuperación enviado")
-    }).catch(() => {
-        alert("Error al enviar el correo")
-    })
-    }
+resetPassword() {
+    axios.post('http://localhost:8000/api/password-reset/', {
+    email: this.email
+    }).then(response => {
+    alert(response.data.message);
+    }).catch(error => {
+    console.error("Error al restablecer la contraseña", error);
+    });
 }
 }
+};
 </script>

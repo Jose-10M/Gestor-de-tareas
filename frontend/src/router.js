@@ -4,42 +4,29 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Router from 'vue-router';*/
 import HomePage from './components/Home.vue';
 import LoginPage from './components/LoginComponent.vue';
-import DashboardComponent from './components/Dashboard.vue';
+import RegisterComponent from './components/RegisterComponent.vue';
+import PasswordResetComponent from './components/PasswordResetComponent.vue';
+import DashboardComponent from './components/DashboardComponent.vue';
+
 
 /*
-Vue.use(Router);
-
-
-const router = new Router({
-mode: 'history',
-routes: [
-{
-    path: '/',
-    name: 'home',
-    component: HomePage
-},
-{
-    path: '/login',
-    name: 'login',
-    component: LoginPage
-},
-{
-    path: '/dashboard',
-    name: 'dashboard',
-    component: DashboardComponent,
-    meta: {
-    requiresAuth: true
-    }
-}
-]
-});*/
+const routes = [
+    { path: '/', component: HomePage },
+    { path: '/login', component: LoginPage },
+    { path: '/register', component: RegisterComponent},
+    { path: '/password-reset', component: PasswordResetComponent },
+    { path: '/dashboard', component: DashboardComponent }
+];*/
 
 
 const routes = [
     { path: '/', component: HomePage },
     { path: '/login', component: LoginPage },
-    { path: '/dashboard', component: DashboardComponent }
+    { path: '/register', component: RegisterComponent },
+    { path: '/password-reset', component: PasswordResetComponent },
+    { path: '/dashboard', component: DashboardComponent, meta: { requiresAuth: true } } // Ruta protegida
 ];
+
 
 const router = createRouter({
 history: createWebHistory(),

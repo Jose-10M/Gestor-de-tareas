@@ -25,6 +25,9 @@ cd frontend
 npm install
 npm install vue-router
 npm install axios
+npm install bootstrap@5
+
+
 
 
 5. Con el venv activo comprueba la ejecución del servidor del Frontend
