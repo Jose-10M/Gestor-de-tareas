@@ -17,6 +17,7 @@ Including another URLconf
 # task_manager/urls.py
 from django.urls import path, include
 
+
 urlpatterns = [
-    path('api/', include('tasks.urls')),
+    path('', include('tasks.urls')),
 ]
